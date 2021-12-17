@@ -1,0 +1,96 @@
+.mega-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: hidden; //Menü alanından taşan kısımları kapatmak için.
+    width: 100px; //Menü genişliği
+    height: 100vh; //Ekranda görülen kısım kadar alanı kaplar.
+    background-color: var(--black-color);
+    transition: ease 300ms; // 0.3 msde açılır.
+
+    &:before { //Menünün devamına gradient renk eklenmesi için kullanıldı.
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); 
+    }
+
+    &:hover {//.mega-menu  hover olduğunda genişlik ve taşan renk alanını günceller.
+        width: 400px;
+        overflow: visible;
+        z-index: 10;
+    }
+
+    .wrapper {
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            display: flex; //Flex ile logo belirlenen alan içerisinde ortalandı.
+            justify-content: center;
+            align-items: center;
+
+            img { //Belirlenen ölçülerin yarısı kadar yükseklik ve genişlik verildi.
+                width: 50%; 
+                height: 50%;
+            }
+        }
+
+        .list {
+            position: absolute;
+            top: 100px; //Logo tarafında yükselik 100px olduğu için yukardan 100px verildi.
+            left: 0;
+            width: 100%;
+            height: calc(100% - 100px); //Yükselik logonun 100px olduğu için 100px çıkarıldı.
+            display: flex;
+            flex-direction: column; //İconların alt alta gelmesi sağlandı.
+            justify-content: center; //İconlar ortalandı.
+
+            li {
+                a {
+                    display: flex; //İcon ve yazılar yanyana getirildi.
+                    align-items: center; //Yukarından ve aşağıdan ortalandı.
+
+                    i {
+                        display: flex;
+                        justify-content: center; //iconlar sağdan soldan ortalandı.
+                        align-items: center; //iconlar aşağı ve yukarıdan ortalandı.
+                        flex: none; //Menü içerisindeki tüm elementleri sığdırmaya çalışmaması için flex none verildi.
+                        width: 100px; //iconlara 100px vererek menüde ortalanması sağlandı.
+                        height: 70px; //İcon aralarındaki mesafe belirlendi.
+
+                        img {
+                            width: 25px;
+                            height: 100%;
+                        }
+                    }
+
+                    .name {
+                        font-size: 30px;
+                        color: var(--grey-color);
+                        text-decoration: none;
+                        white-space: pre; //Menüdeki yazıların tek satırda kalması sağlandı. (Kapanırken)
+                    }
+                }
+
+                &.active, //Js ile class ekleyerek açılan menü yapılırsa kullanılır.
+                &:hover {
+                    a {
+                        .name {
+                            font-weight: 600;
+                            color: var(--white-color);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

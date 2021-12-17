@@ -1,0 +1,161 @@
+@import "../../base/reset";
+@import "../../base/fonts";
+@import "../../base/variables";
+@import "../../vendors/swiper/swiper-7-3-1.min";
+@import "../../companents/mega-menu";
+@import "../../companents/layout";
+
+.content {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .left {
+            width: 50%;
+            padding: 100px 50px 100px 20px;
+
+            .list {
+                li {
+                    list-style: none;
+                    margin-bottom: 10px;
+                    padding-left: 20px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        border: 3px solid var(--white-color);
+                        border-radius: 50px;
+                        transition-delay: .2s;
+
+                        a {
+                            width: 100%;
+                            position: relative;
+                            i {
+                                img {
+                                    content: url("../../../images/icons/white/filled-circle.svg");
+                                }
+                            }
+
+                            .day, .date {
+                                color: var(--white-color);
+                            }
+                        }
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        position: relative;
+                        color: var(--grey-color);
+
+                        i {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+
+                        .day {
+                            font-size: 32px;
+                            margin-left: 20px;
+                        }
+
+                        .date{
+                            position: absolute;
+                            font-size: 32px;
+                            right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+            height: 100vh;
+            padding: 100px 20px 100px 50px;
+
+            .live-stream-slider {
+                width: 100%;
+                height: 100vh;
+
+                .swiper {
+                    width: 100%;
+                    height: 100%;
+
+                    .swiper-slide {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+
+                        .images {
+                            width: 300px;
+                            height: 200px;
+
+                            .poster {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .detail {
+                            color: var(--white-color);
+                            width: calc(100% - 300px);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            padding: 0 20px;
+
+                            .time {
+                                font-size: 40px;
+                                font-weight: 600;
+                                line-height: 1.5;
+                            }
+
+                            .title {
+                                font-size: 30px;
+                                line-height: 1.2;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 4;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+
+                            .status {
+                                font-size: 24px;
+                                line-height: 1.5;
+                                opacity: .5;
+                            }
+                        }
+
+                        &:hover {
+                            .images {
+                                .poster {
+                                    border: 4px solid var(--white-color);
+                                    transition: 0s .4s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

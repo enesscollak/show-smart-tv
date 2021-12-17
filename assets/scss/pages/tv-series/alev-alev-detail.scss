@@ -1,0 +1,108 @@
+@import "../../base/reset";
+@import "../../base/fonts";
+@import "../../base/variables";
+@import "../../companents/mega-menu";
+@import "../../companents/layout";
+
+.content {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.50);
+    }
+
+    .wrapper {
+        position: relative;
+        padding: 0px 40px;
+        color: var(--grey-color);
+
+        .logo {
+            height: 60px;
+        }
+
+        .title {
+            padding-left: 10px;
+            color: var(--white-color);
+            font-size: 24px;
+
+            span {
+                padding-right: 20px;
+                line-height: 3;
+            }
+        }
+
+        .description {
+            padding-left: 10px;
+            width: 700px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .list {
+            li {
+                list-style: none;
+                margin-bottom: 10px;
+                padding-left: 20px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    border: 3px solid var(--white-color);
+                    border-radius: 50px;
+                    transition-delay: .2s;
+
+                    a {
+                        i {
+                            img {
+                                content: url("../../../images/icons/white/filled-circle.svg");
+                            }
+                        }
+
+                        .name {
+                            color: var(--white-color);
+                        }
+
+                        .name.episodes:after {
+                            content: attr(data-count);
+                            padding-left: 250px;
+                        }
+                    }
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    .name {
+                        color: var(--grey-color);
+                        font-size: 32px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

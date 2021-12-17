@@ -1,0 +1,198 @@
+@import "../../base/reset";
+@import "../../base/fonts";
+@import "../../base/variables";
+@import "../../vendors/swiper/swiper-7-3-1.min";
+@import "../../companents/mega-menu";
+@import "../../companents/layout";
+@import "../../companents/main-slider";
+
+.trailer {
+    margin-bottom: 30px;
+    padding: 20px;
+    color: var(--white-color);
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            width: 300px;
+            background-color: var(--black-color);
+            border-radius: 5px;
+
+            &:hover {
+                .images {
+                    .poster {
+                        border: 4px solid var(--white-color);
+                        transition: 0s .4s;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .images {
+                position: relative;
+                padding-top: 56%;
+
+                .poster {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    opacity: .7;
+                }
+
+                .logo {
+                    position: absolute;
+                    z-index: 20;
+                    right: 0;
+                    bottom: 20px;
+                    left: 0;
+                    margin: auto;
+                    max-width: 100%;
+                    height: 40px;
+                }
+            }
+
+            .serie {
+                font-size: 20px;
+                line-height: 1.7;
+            }
+
+            .episodi {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.series {
+    margin-bottom: 30px;
+    padding: 20px;
+
+    .title {
+        color: var(--white-color);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            width: 300px;
+            border-radius: 5px;
+
+            .images {
+                .poster {
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:hover {
+                .images {
+                    .poster {
+                        border: 4px solid var(--white-color);
+                        transition: 0s .4s;
+                    }
+                }
+            }
+
+            .all-series {
+                width: 100%;
+                height: 450px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 4px solid var(--grey-color);
+                border-radius: 5px;
+
+                .text {
+                    padding: 80px;
+                    text-align: center;
+
+                    a {
+                        color: var(--white-color);
+                        font-size: 30px;
+                        font-weight: 600;
+                        line-height: 1.3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.programs {
+    margin-bottom: 100px;
+    padding: 20px;
+
+    .title {
+        color: var(--white-color);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            width: 300px;
+            border-radius: 5px;
+
+            .images {
+                .poster {
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:hover {
+                .images {
+                    .poster {
+                        border: 4px solid var(--white-color);
+                        transition: 0s .4s;
+                    }
+                }
+            }
+
+            .all-programs {
+                width: 100%;
+                height: 390px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 4px solid var(--grey-color);
+                border-radius: 5px;
+
+                .text {
+                    padding: 80px;
+                    text-align: center;
+
+                    a {
+                        color: var(--white-color);
+                        font-size: 30px;
+                        font-weight: 600;
+                        line-height: 1.3;
+                    }
+                }
+            }
+        }
+    }
+}

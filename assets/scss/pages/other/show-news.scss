@@ -1,0 +1,125 @@
+@import "../../base/reset";
+@import "../../base/fonts";
+@import "../../base/variables";
+@import "../../vendors/swiper/swiper-7-3-1.min";
+@import "../../companents/mega-menu";
+@import "../../companents/layout";
+
+.content {
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .left{
+            border-right: 5px solid var(--black-color);
+        }
+
+        .left, .right {
+            width: 50%;
+            height: 100%;
+            background-position: top center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+
+            .show-news-slider {
+                width: 100%;
+                height: 100%;
+
+                .swiper {
+                    width: 100%;
+                    height: 100%;
+
+                    .swiper-wrapper {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .swiper-slide {
+                            width: 100%;
+                            height: auto;
+                            padding-top: calc(100vh - 260px);
+                            .name{
+                                font-size: 24px;
+                                font-weight: 600;
+                                color: var(--white-color);
+                                margin-bottom: 20px;
+                                margin-left: 20px;
+                            }
+                            ul.list {
+                                display: flex;
+                                flex-wrap: wrap;
+                                width: 100%;
+                                padding: 0 10px;
+                                position: relative;
+
+                                &:before {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 39%, rgba(0, 0, 0, 0.8239670868347339) 65%, rgba(0, 0, 0, 0) 100%);
+                                }
+
+                                li.item {
+                                    width: 50%;
+                                    padding: 0 10px;
+                                    margin-bottom: 20px;
+                                    position: relative;
+                                    z-index: 10;
+                                    // &:nth-child(odd){
+                                    //    padding-right: 10px; 
+                                    // }
+                                    // &:nth-child(even){
+                                    //     padding-left: 10px; 
+                                    //  }
+                                    .images {
+                                        width: 100%;
+                                        height: 150px;
+
+                                        .poster {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            border-radius: 5px;
+                                        }
+                                    }
+
+                                    .detail {
+                                        color: var(--white-color);
+                                        line-height: 1.2;
+
+                                        .title {
+                                            font-size: 18px;
+                                        }
+
+                                        .date {
+                                            font-size: 14px;
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        .images {
+                                            .poster {
+                                                border: 4px solid var(--white-color);
+                                                transition: 0s .4s;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
